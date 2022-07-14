@@ -26,11 +26,7 @@ public class MyUserDetailService implements UserDetailsService {
         }
         return toUserDetails(user);
     }
-    /*
-    tar emot uppgifter och enkrypterar lösenordet
-    och sparar användaren i databasen
-    annars returnerar den null
-     */
+
     public User registerUser(User user){
         user.setPassword(encoder.encode(user.getPassword()));
         try{
@@ -42,11 +38,6 @@ public class MyUserDetailService implements UserDetailsService {
 
     }
 
-    /*
-        Kollar inloggsuppgifter om dem stämmer
-        stämmer det så loggas vi in
-        annars loggas vi inte in
-    */
     private UserDetails toUserDetails(User user){
         return org.springframework.security.core.userdetails.User
                 .withUsername(user.getEmail())

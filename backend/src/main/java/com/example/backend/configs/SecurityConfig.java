@@ -29,9 +29,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/login");//tar emot inloggsuppgifter
     }
-    /*
-          Encoder för lösenord
-      */
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception{
@@ -41,9 +38,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
-    /*
-    denna används vid egen login sida för autentisering
-     */
     @Bean("authenticationManager")
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
