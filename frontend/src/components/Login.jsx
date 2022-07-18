@@ -1,7 +1,10 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { useHistory } from "react-router-dom";
 
 function Login() {
+
+    const [user, setUser] = useState('');
+
     let history = useHistory();
     
     function Register(){
@@ -12,6 +15,9 @@ function Login() {
     function login(){
         // hämta lösenord samt användarnamn
         // fetch samt login
+
+        history.push("/homePage");
+        window.location.reload(true);
     }
 
     return (
